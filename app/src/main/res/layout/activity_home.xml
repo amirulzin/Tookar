@@ -2,38 +2,216 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.activity.HomeActivity">
 
     <include layout="@layout/layout_base_toolbar" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardview_min"
+        android:id="@+id/ah_matchcard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="4dp"
-        app:contentPadding="8dp"
-        app:cardUseCompatPadding="true">
-        <ImageView
-            android:src="@drawable/circle_accent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:layout_margin="8dp"
+        android:clickable="true"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="8dp">
+
+        <TextView
+            android:id="@+id/tv_matchfound"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_accent"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="@color/white" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Barter match found" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check successful matches" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    <Space
+    <android.support.v7.widget.CardView
+        android:id="@+id/ah_goodwillcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="8dp">
+
+        <TextView
+            android:id="@+id/tv_newgoodwills"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_accent"
+            android:gravity="center"
+            android:text="30"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Goodwills listed in your area" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap to see where and when" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <!-- TODO: Unprototype to ListView -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:text="Have" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:scrollbarStyle="outsideOverlay">
 
-    <Button
-        android:text="Next Activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/abc_ic_menu_share_mtrl_alpha"
+                        android:tint="?attr/colorAccent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="Constance 1992 Bicycle \nGoodwill" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/abc_ic_menu_share_mtrl_alpha"
+                        android:tint="?attr/colorAccent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="Mitsubishi 20' tires\nBartering" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/abc_ic_menu_share_mtrl_alpha"
+                        android:tint="?attr/colorAccent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="Old preschool textbooks \nGoodwill" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/abc_ic_menu_share_mtrl_alpha"
+                        android:tint="?attr/colorAccent" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="5x9 Glass Aquarium \nBarter" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
